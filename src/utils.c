@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:30:39 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/15 18:31:14 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:09:46 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print_instructions(void)
 	ft_printf("\n• 'J' or 'j' for Julia");
 	ft_printf("\n For Julia, you have to add two decimal numbers as parameters");
 	ft_printf("\n 	Examples: j 0.285 0.01 | j -0.70176 -0.3842 \n");
-	ft_printf(" 		  j -0.7269 0.1889 | j -0.70176 -0.3842 \n");
+	ft_printf(" 		  j -0.7269 0.1889 | j -0.4 0.6 \n");
 	ft_printf(" 		  j 0.45 0.1428 | j -0.835 0.2321 \n");
 	ft_printf("\n- Use mouse wheel for zoom in/out. Press 'ESC' for exit\n\n");
 	exit(1);
