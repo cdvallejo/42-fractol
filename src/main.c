@@ -6,18 +6,13 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:49:08 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/14 18:20:32 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/18 12:28:26 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-
-/*
-void	check_leaks(void)
-{
-	system("leaks fractol");
-}*/
+//system("leaks -q fractol");
 
 int	main(int ac, char **av)
 {
@@ -32,7 +27,6 @@ int	main(int ac, char **av)
 	mlx_loop(fractal.mlx);
 	mlx_terminate(fractal.mlx);
 	return (EXIT_SUCCESS);
-	//atexit(check_leaks);
 }
 
 /*

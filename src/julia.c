@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/15 18:46:15 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/18 15:51:38 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	julia_algorithm(t_fractol *fractal)
 	{
 		z_temp_real = (z.real * z.real) - (z.imaginary * z.imaginary)
 			+ fractal->julia_c.real;
-		z.imaginary = 2 * z.real * z.imaginary + fractal->julia_c.imaginary;
+		z.imaginary = 2 * (z.real * z.imaginary) + fractal->julia_c.imaginary;
 		z.real = z_temp_real;
 		if ((z.real * z.real) + (z.imaginary * z.imaginary) >= 4)
 			break ;

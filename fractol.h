@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:05:47 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/15 18:45:21 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:34:24 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_complex
 }				t_complex;
 
 /*
-    Struct for fractal values needed.
+    Struct for fractal values:
 */
 typedef struct s_fractol
 {
@@ -89,5 +89,10 @@ void			print_instructions(void);
 int				check_sign(char *av);
 double			ft_atof(char *av);
 void			check_args(int ac, char **av, t_fractol *fractal);
+
+//burningship.c functions
+void			draw_burningship(t_fractol *fractal);
+double			absolute_value(double z_real, double z_imaginary);
+void			burningship_algorithm(t_fractol *fractal);
 
 #endif

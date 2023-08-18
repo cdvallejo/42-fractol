@@ -6,12 +6,12 @@
 #    By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 09:58:38 by cvallejo          #+#    #+#              #
-#    Updated: 2023/08/15 13:50:05 by cvallejo         ###   ########.fr        #
+#    Updated: 2023/08/18 16:34:26 by cvallejo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
-SRCS = src/main.c src/fractol.c src/graphics.c src/colors.c src/hooks.c src/utils.c src/mandelbrot.c src/julia.c
+SRCS = src/main.c src/fractol.c src/graphics.c src/colors.c src/hooks.c src/utils.c src/mandelbrot.c src/julia.c src/burningship.c
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LIBFT = ./libraries/libft

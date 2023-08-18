@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:30:39 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/15 19:09:46 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/18 16:06:11 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ void	check_args(int ac, char **av, t_fractol *fractal)
 		else
 			print_instructions();
 	}
+	else if (ac == 2 && (av[1][0] == 'b' || av[1][0] == 'B') && !av[1][1])
+		fractal->select = 3;
 	else
 		print_instructions();
 }

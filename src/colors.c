@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:32:44 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/15 18:46:08 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/18 17:23:56 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,39 @@ void	colors_julia_1(t_fractol *fractal)
 	else
 		colors_julia_2(fractal);
 }
+
+void	colors_burningship(t_fractol *fractal)
+{
+	if (fractal->iter == MAX_ITER)
+		fractal->color = 0xFFFFFFFF;
+	else if (fractal->iter <= 4)
+		fractal->color = 0x002244FF;
+	else if (fractal->iter > 4 && fractal->iter <= 8)
+		fractal->color = 0x000080FF;
+	else if (fractal->iter > 8 && fractal->iter <= 15)
+		fractal->color = 0x0000FFFF;
+	else if (fractal->iter > 15 && fractal->iter <= 25)
+		fractal->color = 0xF9CEB7FF;
+	else if (fractal->iter > 25 && fractal->iter <= 35)
+		fractal->color = 0xD6C6BEFF;
+	else if (fractal->iter > 35 && fractal->iter <= 45)
+		fractal->color = 0xD6C6BEFF;
+	else if (fractal->iter > 46 && fractal->iter <= 100)
+		fractal->color = 0xE8EAA1FF;
+	else if (fractal->iter > 100 && fractal->iter <= 120)
+		fractal->color = 0xF9FE56FF;
+	else if (fractal->iter > 120 && fractal->iter < 150)
+		fractal->color = 0xFFFF00FF;
+	else
+		fractal->color = 0xFFFFFFFF;
+}
+
 void	fractal_colors(t_fractol *fractal)
 {
 	if (fractal->select == 1)
 		colors_mandelbrot(fractal);
 	else if (fractal->select == 2)
 		colors_julia_1(fractal);
+	else if (fractal->select == 3)
+		colors_burningship(fractal);
 }
