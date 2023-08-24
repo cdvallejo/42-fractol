@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "complex": "c",
-        "stdio.h": "c",
-        "fractol.h": "c"
-    }
-}
