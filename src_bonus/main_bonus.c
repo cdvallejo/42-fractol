@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:49:08 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 17:16:41 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/22 14:10:09 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 //system("leaks -q fractol");
 
@@ -22,7 +22,8 @@ int	main(int ac, char **av)
 	init_fractol(&fractal, av);
 	pixel_in_window(&fractal);
 	mlx_image_to_window(fractal.mlx, fractal.img, 0, 0);
-	mlx_key_hook(fractal.mlx, &my_keyhook, &fractal);
+	mlx_scroll_hook(fractal.mlx, &scrollhook, fractal.mlx);
+	mlx_loop_hook(fractal.mlx, &keyhook, fractal.mlx);
 	mlx_loop(fractal.mlx);
 	mlx_terminate(fractal.mlx);
 	return (EXIT_SUCCESS);

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:30:39 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 15:54:09 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:02:43 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 void	print_instructions(void)
 {
-	ft_printf("\n********** Fractol 42 **********\n");
+	ft_printf("\n********** Fractol 42 Bonus **********\n");
 	ft_printf("\n• 'M' or 'm' for Mandelbrot\n");
+	ft_printf("\n• 'B' or 'b' for Burning Ship\n");
 	ft_printf("\n• 'J' or 'j' for Julia");
-	ft_printf("\n For Julia, you can add two decimal numbers as parameters");
+	ft_printf("\n For Julia, you have to add two decimal numbers as parameters");
 	ft_printf("\n 	Examples: j 0.285 0.01 | j -0.70176 -0.3842 \n");
 	ft_printf(" 		  j -0.7269 0.1889 | j -0.4 0.6 \n");
 	ft_printf(" 		  j 0.45 0.1428 | j -0.835 0.2321 \n");
-	ft_printf("\n		  (Default value: j -0.21 0.65)\n");
 	ft_printf("\n- Use mouse wheel for zoom in/out. Press 'ESC' for exit\n\n");
 	exit(1);
 }
@@ -106,6 +106,8 @@ void	check_args(int ac, char **av, t_fractol *fractal)
 	}
 	else if (ac == 2 && (av[1][0] == 'j' || av[1][0] == 'J') && !av[1][1])
 		fractal->select = 2;
+	else if (ac == 2 && (av[1][0] == 'b' || av[1][0] == 'B') && !av[1][1])
+		fractal->select = 3;
 	else
 		print_instructions();
 }

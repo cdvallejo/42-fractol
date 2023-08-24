@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.c                                          :+:      :+:    :+:   */
+/*   fractol_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 14:24:06 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:06:44 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 /*
     Inicialización de los valores del struct fractal.
@@ -24,8 +24,6 @@ void	mandelbrot_init(t_fractol *fractal)
 	fractal->max_imaginary = 1.2;
 	fractal->min_imaginary = -1.2;
 	fractal->iter = 0;
-	fractal->move_x = 0;
-	fractal->move_y = 0;
 	fractal->mlx = mlx_init(WIDTH, HEIGHT, "42 fract'ol: Mandelbrot | cvallejo",
 			true);
 	if (!fractal->mlx)
@@ -52,8 +50,6 @@ void	julia_init(t_fractol *fractal, char **av)
 	fractal->max_imaginary = 1.6;
 	fractal->min_imaginary = -1.6;
 	fractal->iter = 0;
-	fractal->move_x = 0;
-	fractal->move_y = 0;
 	fractal->mlx = mlx_init(WIDTH, HEIGHT, "42 fract'ol: Julia | cvallejo",
 			true);
 	if (!fractal->mlx)
@@ -70,8 +66,6 @@ void	burningship_init(t_fractol *fractal)
 	fractal->max_imaginary = 1.8;
 	fractal->min_imaginary = -0.7;
 	fractal->iter = 0;
-	fractal->move_x = 0;
-	fractal->move_y = 0;
 	fractal->mlx = mlx_init(WIDTH, HEIGHT,
 			"42 fract'ol: Burning Ship | cvallejo", true);
 	if (!fractal->mlx)
@@ -91,6 +85,8 @@ void	init_fractol(t_fractol *fractal, char **av)
 		mandelbrot_init(fractal);
 	else if (fractal->select == 2)
 		julia_init(fractal, av);
+	else if (fractal->select == 3)
+		burningship_init(fractal);
 }
 
 /*
@@ -103,4 +99,6 @@ void	fractal_selection(t_fractol *fractal)
 		draw_mandelbrot(fractal);
 	else if (fractal->select == 2)
 		draw_julia(fractal);
+	else if (fractal->select == 3)
+		draw_burningship(fractal);
 }

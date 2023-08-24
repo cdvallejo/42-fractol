@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   hooks_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 16:20:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 17:43:02 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/22 14:10:02 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 /*
-	Función que asigna a la tecla ESC el cierre de ventana y del programa.
+	Función que asigna a la tecla ESC cuando es presionada
+	el cierre de ventana y la salida del programa.
 */
-void	my_keyhook(mlx_key_data_t keydata, void	*param)
+void	keyhook(void *param)
 {
-	t_fractol	*fractal;
+	mlx_t	*mlx_keys;
 
-	fractal = param;
-	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
+	mlx_keys = param;
+	if (mlx_is_key_down(param, MLX_KEY_ESCAPE))
 	{
-		mlx_terminate(fractal->mlx);
+		mlx_close_window(param);
 		exit(EXIT_SUCCESS);
 	}
-	if (keydata.key == MLX_KEY_UP && keydata.action == MLX_RELEASE)
-		puts("ARRIBA");
-	if (keydata.key == MLX_KEY_DOWN && keydata.action == MLX_RELEASE)
-		puts("ABAJO");
 }
 
+/*
+	Función que asigna el zoom.
+*/
 void	scrollhook(double xdelta, double ydelta, void *param)
 {
 	mlx_t	*mlx_keys;

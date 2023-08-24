@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   julia_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 10:59:28 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/22 14:10:06 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../fractol_bonus.h"
 
 /*
-    Con esta función determinamos los valores para que se produzca mandelbrot.
-    Su fórmula es z = z*z + c. Las variables z y c son números complejos,
-	constan de un número real y otro imaginario.
-    c_real y c_imaginario son el cálculo de la proporción del pixel en pantalla
-	respecto al plano fractal. Esta fórmula se repite de manera recursiva,
-	actualizando el valor de z. En cada iteración se comprueba si el resultado
-	dado escapa los límites de mandelbrot (<= 4), para dibujar el pixel con un
-	color diferente dependiendo del resultado.
+    Con esta función determinamos los valores para que se produzca Julia.
+    Su fórmula es la misma de Mandelbrot, con la diferencia de que hay que
+	indicarle los valores de c_real y c_imaginario. A su vez, z no empezará
+	desde 0 cada vez como ocurría en Mandelbrot, sino que lo hará desde los
+	valores indicados.
 */
-void	draw_mandelbrot(t_fractol *fractal)
+void	draw_julia(t_fractol *fractal)
 {
-	mandelbrot_algorithm(fractal);
+	julia_algorithm(fractal);
 	fractal_colors(fractal);
 }
 
-void	mandelbrot_algorithm(t_fractol *fractal)
+void	julia_algorithm(t_fractol *fractal)
 {
 	t_complex	z;
 	double		z_temp_real;
 
-	z.real = 0;
-	z.imaginary = 0;
+	z.real = fractal->c.real;
+	z.imaginary = fractal->c.imaginary;
 	z_temp_real = 0;
 	fractal->iter = 0;
 	while (fractal->iter < MAX_ITER)
 	{
 		z_temp_real = (z.real * z.real) - (z.imaginary * z.imaginary)
-			+ fractal->c.real;
-		z.imaginary = 2 * (z.real * z.imaginary) + fractal->c.imaginary;
+			+ fractal->julia_c.real;
+		z.imaginary = 2 * (z.real * z.imaginary) + fractal->julia_c.imaginary;
 		z.real = z_temp_real;
 		if ((z.real * z.real) + (z.imaginary * z.imaginary) >= 4)
 			break ;

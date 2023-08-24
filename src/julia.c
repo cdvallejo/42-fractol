@@ -6,20 +6,18 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/18 15:51:38 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/22 11:38:25 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
 /*
-    Con esta función determinamos los valores para que se produzca mandelbrot.
-    Su fórmula es z = z*z + c. Las variables z y c son números complejos,
-	constan de un número real y otro imaginario.
-    c_real y c_imaginario son el cálculo de la proporción del pixel en pantalla respecto al plano fractal.
-    Esta fórmula se repite de manera recursiva, actualizando el valor de z.
-    En cada iteración se comprueba si el resultado dado escapa los límites de mandelbrot (<= 4),
-	para dibujar el pixel con un color diferente dependiendo del resultado.
+    Con esta función determinamos los valores para que se produzca Julia.
+    Su fórmula es la misma de Mandelbrot, con la diferencia de que hay que
+	indicarle los valores de c_real y c_imaginario. A su vez, z no empezará
+	desde 0 cada vez como ocurría en Mandelbrot, sino que lo hará desde los
+	valores indicados.
 */
 void	draw_julia(t_fractol *fractal)
 {
