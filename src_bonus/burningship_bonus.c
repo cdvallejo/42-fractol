@@ -6,16 +6,16 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 14:09:46 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 10:47:49 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol_bonus.h"
 
 /*
-    Con esta función determinamos los valores para que se produzca burningship.
-    Su fórmula es la misma de Mandelbrot, con la salvedad de que la operación
-	para hallar la parte imaginaria de z ha de ser un valor absoluto.
+	Función que delega el orden para que se dibuje Burning Ship:
+	1) Iniciación del algoritmo
+	2) Coloreado dependiendo del número de iteración.
 */
 void	draw_burningship(t_fractol *fractal)
 {
@@ -23,6 +23,10 @@ void	draw_burningship(t_fractol *fractal)
 	fractal_colors(fractal);
 }
 
+/*
+	Subfunción para el algoritmo de Mandelbrot que convierte un número
+	en absoluto.
+*/
 double	absolute_value(double z_real, double z_imaginary)
 {
 	double	absolute;
@@ -33,6 +37,11 @@ double	absolute_value(double z_real, double z_imaginary)
 	return (absolute);
 }
 
+/*
+    Con esta función determinamos los valores para que se produzca burningship.
+    Su fórmula es la misma de Mandelbrot, con la salvedad de que la operación
+	para hallar la parte imaginaria de z ha de ser un valor absoluto.
+*/
 void	burningship_algorithm(t_fractol *fractal)
 {
 	t_complex	z;

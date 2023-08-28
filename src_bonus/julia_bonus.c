@@ -6,18 +6,16 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 14:10:06 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 10:47:00 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol_bonus.h"
 
 /*
-    Con esta función determinamos los valores para que se produzca Julia.
-    Su fórmula es la misma de Mandelbrot, con la diferencia de que hay que
-	indicarle los valores de c_real y c_imaginario. A su vez, z no empezará
-	desde 0 cada vez como ocurría en Mandelbrot, sino que lo hará desde los
-	valores indicados.
+	Función que delega el orden para que se dibuje Julia:
+	1) Iniciación del algoritmo
+	2) Coloreado dependiendo del número de iteración.
 */
 void	draw_julia(t_fractol *fractal)
 {
@@ -25,6 +23,13 @@ void	draw_julia(t_fractol *fractal)
 	fractal_colors(fractal);
 }
 
+/*
+    Con esta función determinamos los valores para que se produzca Julia.
+    Su fórmula es la misma de Mandelbrot, con la diferencia de que hay que
+	indicarle los valores de c_real y c_imaginario. A su vez, z no empezará
+	desde 0 cada vez como ocurría en Mandelbrot, sino que lo hará desde los
+	valores indicados. Su forma cambiará dependiendo de estos valores iniciales.
+*/
 void	julia_algorithm(t_fractol *fractal)
 {
 	t_complex	z;

@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:05:47 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 17:16:45 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:30:23 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define WIDTH 1400
-# define HEIGHT 1200
+# define WIDTH 1200
+# define HEIGHT 1000
 # define MAX_ITER 150
 
 /*
@@ -48,6 +48,7 @@ typedef struct s_fractol
 	double		move_y;
 	double		min_imaginary;
 	double		max_imaginary;
+	double		zoom;
 	int			iter;
 	int			color;
 	mlx_t		*mlx;
@@ -83,6 +84,7 @@ void			julia_algorithm(t_fractol *fractal);
 void			fractal_colors(t_fractol *fractal);
 
 //hooks.c
+void			my_move_keys(mlx_key_data_t keydata, t_fractol *fractal);
 void			my_keyhook(mlx_key_data_t keydata, void	*param);
 void			scrollhook(double xdelta, double ydelta, void *param);
 
@@ -91,10 +93,5 @@ void			print_instructions(void);
 int				check_sign(char *av);
 double			ft_atof(char *av);
 void			check_args(int ac, char **av, t_fractol *fractal);
-
-//burningship.c functions
-void			draw_burningship(t_fractol *fractal);
-double			absolute_value(double z_real, double z_imaginary);
-void			burningship_algorithm(t_fractol *fractal);
 
 #endif

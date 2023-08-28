@@ -6,11 +6,22 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 10:59:28 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 10:37:57 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
+
+/*
+	Función que delega el orden para que se dibuje Mandelbrot:
+	1) Iniciación del algoritmo
+	2) Coloreado dependiendo del número de iteración.
+*/
+void	draw_mandelbrot(t_fractol *fractal)
+{
+	mandelbrot_algorithm(fractal);
+	fractal_colors(fractal);
+}
 
 /*
     Con esta función determinamos los valores para que se produzca mandelbrot.
@@ -22,12 +33,6 @@
 	dado escapa los límites de mandelbrot (<= 4), para dibujar el pixel con un
 	color diferente dependiendo del resultado.
 */
-void	draw_mandelbrot(t_fractol *fractal)
-{
-	mandelbrot_algorithm(fractal);
-	fractal_colors(fractal);
-}
-
 void	mandelbrot_algorithm(t_fractol *fractal)
 {
 	t_complex	z;

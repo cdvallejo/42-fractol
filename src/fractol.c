@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 14:24:06 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:52:41 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
     Inicialización de los valores del struct fractal.
-	Los valores reales e imaginarios están sacados de wikipedia
+	Los valores reales e imaginarios están sacados y adaptados de wikipedia
 	para una visualización recomendada.
 */
 void	mandelbrot_init(t_fractol *fractal)
@@ -24,6 +24,7 @@ void	mandelbrot_init(t_fractol *fractal)
 	fractal->max_imaginary = 1.2;
 	fractal->min_imaginary = -1.2;
 	fractal->iter = 0;
+	fractal->zoom = 1.0;
 	fractal->move_x = 0;
 	fractal->move_y = 0;
 	fractal->mlx = mlx_init(WIDTH, HEIGHT, "42 fract'ol: Mandelbrot | cvallejo",
@@ -47,33 +48,16 @@ void	julia_init(t_fractol *fractal, char **av)
 		fractal->julia_c.real = ft_atof(av[2]);
 		fractal->julia_c.imaginary = ft_atof(av[3]);
 	}
-	fractal->max_real = 1.6;
-	fractal->min_real = -1.6;
-	fractal->max_imaginary = 1.6;
-	fractal->min_imaginary = -1.6;
-	fractal->iter = 0;
+	fractal->max_real = 1;
+	fractal->min_real = -2;
+	fractal->max_imaginary = 1.2;
+	fractal->min_imaginary = -1.2;
+	fractal->zoom = 1.0;
 	fractal->move_x = 0;
 	fractal->move_y = 0;
+	fractal->iter = 0;
 	fractal->mlx = mlx_init(WIDTH, HEIGHT, "42 fract'ol: Julia | cvallejo",
 			true);
-	if (!fractal->mlx)
-		exit(EXIT_FAILURE);
-	fractal->img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);
-	if (!fractal->img)
-		exit(EXIT_FAILURE);
-}
-
-void	burningship_init(t_fractol *fractal)
-{
-	fractal->max_real = 1.2;
-	fractal->min_real = -2;
-	fractal->max_imaginary = 1.8;
-	fractal->min_imaginary = -0.7;
-	fractal->iter = 0;
-	fractal->move_x = 0;
-	fractal->move_y = 0;
-	fractal->mlx = mlx_init(WIDTH, HEIGHT,
-			"42 fract'ol: Burning Ship | cvallejo", true);
 	if (!fractal->mlx)
 		exit(EXIT_FAILURE);
 	fractal->img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);

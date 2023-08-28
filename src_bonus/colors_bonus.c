@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:32:44 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 14:09:51 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:51:59 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 /*
 	Las siguientes funciones designan los colores en valor hexadecimal según
-	el número de iteraciones que ha resultado en cada uso de la función
-	algorítmica del fractal correspondiente.
+	el número de iteraciones dado en la iteración algorítmica del fractal.
 */
 void	colors_mandelbrot(t_fractol *fractal)
 {

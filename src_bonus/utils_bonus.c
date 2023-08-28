@@ -6,26 +6,35 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:30:39 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 16:02:43 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 10:45:35 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol_bonus.h"
 
+/*
+	Imprime por pantalla las instrucción del programa en caso de que se
+	introduzca un parámetro erróneo o ninguno en su ejecución.
+*/
 void	print_instructions(void)
 {
-	ft_printf("\n********** Fractol 42 Bonus **********\n");
-	ft_printf("\n• 'M' or 'm' for Mandelbrot\n");
-	ft_printf("\n• 'B' or 'b' for Burning Ship\n");
-	ft_printf("\n• 'J' or 'j' for Julia");
-	ft_printf("\n For Julia, you have to add two decimal numbers as parameters");
-	ft_printf("\n 	Examples: j 0.285 0.01 | j -0.70176 -0.3842 \n");
+	ft_printf("\n********** Fract'ol 42 **********\n");
+	ft_printf("\n• Write 'M' or 'm' for Mandelbrot.\n");
+	ft_printf("\n• Write 'J' or 'j' for Julia.");
+	ft_printf("\n For Julia, add two decimal numbers as parameters.");
+	ft_printf("\n Examples:");
+	ft_printf("\n 	 	  j 0.285 0.01 | j -0.70176 -0.3842 \n");
 	ft_printf(" 		  j -0.7269 0.1889 | j -0.4 0.6 \n");
 	ft_printf(" 		  j 0.45 0.1428 | j -0.835 0.2321 \n");
-	ft_printf("\n- Use mouse wheel for zoom in/out. Press 'ESC' for exit\n\n");
+	ft_printf("\n		  (Default value: j -0.21 0.65)\n");
+	ft_printf("\n- Close or press 'ESC' on fract'ol window for exit.\n\n");
 	exit(1);
 }
 
+/*
+	(Sólo para Julia): Comprueba si los números introducidos son double.
+	Si no, volverá a imprimir las instrucciones.
+*/
 int	check_float(char *av)
 {
 	int	i;
@@ -52,6 +61,10 @@ int	check_float(char *av)
 	return (1);
 }
 
+/*
+	(Sólo para Julia): Subfunción para ft_atof para comprobar el signo
+	positivo o negativo de un número introducido.
+*/
 int	check_sign(char *av)
 {
 	int	sign;
@@ -67,6 +80,9 @@ int	check_sign(char *av)
 	return (sign);
 }
 
+/*
+	(Sólo para Julia): Convierte los argumentos en double.
+*/
 double	ft_atof(char *av)
 {
 	double	sign;
@@ -93,6 +109,10 @@ double	ft_atof(char *av)
 	return (result * sign);
 }
 
+/*
+	Parseo de los parámetros introducidos y categoriza el fractal
+	introducido.
+*/
 void	check_args(int ac, char **av, t_fractol *fractal)
 {
 	if (ac == 2 && (av[1][0] == 'm' || av[1][0] == 'M') && !av[1][1])

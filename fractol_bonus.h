@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:05:47 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 15:57:46 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/25 18:11:35 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,11 @@ typedef struct s_fractol
 	int			select;
 	double		min_real;
 	double		max_real;
+	double		move_x;
+	double		move_y;
 	double		min_imaginary;
 	double		max_imaginary;
+	double		zoom;
 	int			iter;
 	int			color;
 	mlx_t		*mlx;
@@ -81,7 +84,8 @@ void			julia_algorithm(t_fractol *fractal);
 void			fractal_colors(t_fractol *fractal);
 
 //hooks_bonus.c functions
-void			keyhook(void *param);
+void			my_move_keys(mlx_key_data_t keydata, t_fractol *fractal);
+void			my_keyhook(mlx_key_data_t keydata, void	*param);
 void			scrollhook(double xdelta, double ydelta, void *param);
 
 //utils_bonus.c functions

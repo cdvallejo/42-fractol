@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 12:32:44 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/22 11:26:33 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/25 17:51:55 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 /*
 	Las siguientes funciones designan los colores en valor hexadecimal según
-	el número de iteraciones que ha resultado en cada uso de la función
-	algorítmica del fractal correspondiente.
+	el número de iteraciones dado en la iteración algorítmica del fractal.
 */
 void	colors_mandelbrot(t_fractol *fractal)
 {
@@ -95,32 +94,6 @@ void	colors_julia_1(t_fractol *fractal)
 		colors_julia_2(fractal);
 }
 
-void	colors_burningship(t_fractol *fractal)
-{
-	if (fractal->iter == MAX_ITER)
-		fractal->color = 0xFFFFFFFF;
-	else if (fractal->iter <= 6)
-		fractal->color = 0x000000FF;
-	else if (fractal->iter > 6 && fractal->iter <= 8)
-		fractal->color = 0x000080FF;
-	else if (fractal->iter > 8 && fractal->iter <= 15)
-		fractal->color = 0x0000FFFF;
-	else if (fractal->iter > 15 && fractal->iter <= 25)
-		fractal->color = 0xF9CEB7FF;
-	else if (fractal->iter > 25 && fractal->iter <= 35)
-		fractal->color = 0xD6C6BEFF;
-	else if (fractal->iter > 35 && fractal->iter <= 45)
-		fractal->color = 0xD6C6BEFF;
-	else if (fractal->iter > 46 && fractal->iter <= 100)
-		fractal->color = 0xE8EAA1FF;
-	else if (fractal->iter > 100 && fractal->iter <= 120)
-		fractal->color = 0xF9FE56FF;
-	else if (fractal->iter > 120 && fractal->iter < 150)
-		fractal->color = 0xFFFF00FF;
-	else
-		fractal->color = 0xFFFFFFFF;
-}
-
 /*
 	Función de paso para seleccionar el fractal
 	que se va a colorear.
@@ -131,6 +104,4 @@ void	fractal_colors(t_fractol *fractal)
 		colors_mandelbrot(fractal);
 	else if (fractal->select == 2)
 		colors_julia_1(fractal);
-	else if (fractal->select == 3)
-		colors_burningship(fractal);
 }
