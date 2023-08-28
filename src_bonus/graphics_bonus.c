@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 13:49:19 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/25 17:57:51 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:26:15 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	graphic_proportion(t_fractol *fractal, int x, int y)
 	Mediente este while se recorre la pantalla pixel a pixel para:
 	1) Hallar los valores reales e imaginarios del valor c de la fórmula
 	fractal respecto al plano visual (x, y).
-	2) Iterar la fórmula del fractal corrrespondiente para saber qué ha de dibujar
+	2) Iterar la fórmula del fractal correspondiente para saber qué ha de dibujar
 	en ese pixel (dependiendo del número de iteraciones de la fórmula).
 	3) Dibujar con la librería mlx ese pixel en el "lienzo".
 */
