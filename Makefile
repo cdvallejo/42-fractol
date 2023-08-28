@@ -6,7 +6,7 @@
 #    By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 09:58:38 by cvallejo          #+#    #+#              #
-#    Updated: 2023/08/24 12:11:26 by cvallejo         ###   ########.fr        #
+#    Updated: 2023/08/28 11:48:47 by cvallejo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,5 @@ fclean:
 		$(RM) $(OBJS) $(NAME) $(OBJS_BONUS) $(NAME_BONUS)
 
 re:		fclean all
-
-run:	all bonus
-		./$(NAME)
 
 .PHONY:	all clean fclean re bonus
