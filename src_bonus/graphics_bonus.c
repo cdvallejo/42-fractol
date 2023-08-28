@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 13:49:19 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/28 11:26:15 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:32:20 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	graphic_proportion(t_fractol *fractal, int x, int y)
 				+ fractal->move_x);
 	fractal->c.imaginary = (fractal->max_imaginary - (double)y
 			* ((fractal->max_imaginary - fractal->min_imaginary) * fractal->zoom
-			/ HEIGHT) - (fractal->max_imaginary - fractal->min_imaginary) * (1
-				- fractal->zoom) / 2 + fractal->move_y);
+				/ HEIGHT) - (fractal->max_imaginary - fractal->min_imaginary)
+			* (1 - fractal->zoom) / 2 + fractal->move_y);
 }
 
 /*

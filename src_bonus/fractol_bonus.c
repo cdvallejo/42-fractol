@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/25 17:52:52 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:33:55 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	mandelbrot_init(t_fractol *fractal)
 	fractal->move_x = 0;
 	fractal->move_y = 0;
 	fractal->mlx = mlx_init(WIDTH, HEIGHT, "42 fract'ol: Mandelbrot | cvallejo",
-		true);
+			true);
 	if (!fractal->mlx)
 		exit(EXIT_FAILURE);
 	fractal->img = mlx_new_image(fractal->mlx, WIDTH, HEIGHT);

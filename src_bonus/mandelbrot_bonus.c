@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 18:01:40 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/28 10:38:04 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/28 11:39:21 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ void	draw_mandelbrot(t_fractol *fractal)
 	dado escapa los límites de mandelbrot (<= 4), para dibujar el pixel con un
 	color diferente dependiendo del resultado.
 */
-void	draw_mandelbrot(t_fractol *fractal)
-{
-	mandelbrot_algorithm(fractal);
-	fractal_colors(fractal);
-}
 
 void	mandelbrot_algorithm(t_fractol *fractal)
 {
