@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:05:47 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/25 18:11:35 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:50:35 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define WIDTH 1400
-# define HEIGHT 1200
+# define WIDTH 1200
+# define HEIGHT 1000
 # define MAX_ITER 150
 
 /*
