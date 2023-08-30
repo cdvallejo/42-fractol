@@ -6,13 +6,11 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 18:49:08 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/28 15:57:52 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/30 11:13:09 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
-
-//system("leaks -q fractol");
 
 /*
 	Programa que dibuja gráficamente un fractal: Mandelbrot, Julia o

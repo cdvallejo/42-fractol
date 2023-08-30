@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:30:39 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/08/28 10:45:35 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:24:29 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	print_instructions(void)
 {
 	ft_printf("\n********** Fract'ol 42 **********\n");
 	ft_printf("\n• Write 'M' or 'm' for Mandelbrot.\n");
+	ft_printf("\n• Write 'B' or 'b' for Burning Ship.\n");
 	ft_printf("\n• Write 'J' or 'j' for Julia.");
 	ft_printf("\n For Julia, add two decimal numbers as parameters.");
 	ft_printf("\n Examples:");
