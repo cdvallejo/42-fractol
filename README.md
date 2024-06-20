@@ -1,4 +1,4 @@
-#Fractol - 42cursus
+<h1>Fractol - 42cursus</h1>
 
 This repository contains the source code for the Fract_OL Graphics Project, which is part of the 42 cursus. The project involves creating graphically beautiful fractals and encrypting images.
 
